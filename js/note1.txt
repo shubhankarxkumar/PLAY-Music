@@ -1,0 +1,12 @@
+primitive data type
+Boolean, String, Underfined, Null, Symbol, Number, BigInt
+
+refrence type 
+Array, Object, Funtion
+
+js stores data in 2 types of memory 
+1 heap memory 2 stack memory
+
+stack => primitive type ==> number,boolean, string, null, Underfined,object,BigInt
+
+heap => non primitive/refrence ==> object. Funtion, Array
