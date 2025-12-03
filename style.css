@@ -1,29 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
-  background-color: rgb(248, 246, 243);
-}
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
   font-family: "Montserrat", sans-serif;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  height: 45px;
-  background-color: black;
   color: white;
 }
 
+/* NAVBAR */
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 55px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 nav ul li {
-  padding: 0 12px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #f0d000;
+  transform: translateY(-2px);
 }
 
 .img {
@@ -31,71 +41,124 @@ nav ul li {
   width: 58px;
 }
 
+/* BRAND */
 .brands {
   display: flex;
   align-items: center;
-  font: bolder;
-  font-size: 1.3rem;
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
+/* MAIN CONTAINER */
 .cointainer {
   height: 70vh;
-  background-color: black;
-  color: azure;
-  margin: 23px auto;
-  display: flex;
-  flex-direction: column; /* NEW */
-  align-items: flex-start; /* NEW */
   width: 70%;
-  border-radius: 12px;
-  padding: 20px;
-  background-image: url(bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 20px;
 
-.bottom {
-  position: sticky;
-  height: 100px;
-  background-color: black;
-  color: whitesmoke;
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  background: url(bg.jpg) center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+
+  /* Frosted glass overlay */
+}
+
+.cointainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.cointainer * {
+  position: relative;
+  z-index: 2;
+}
+
+/* BOTTOM PLAYER */
+.bottom {
+  position: sticky;
+  bottom: 0;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  color: #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .icons {
-  margin-top: 30px;
-  font-size: 30px;
-}
-
-#progressBar {
-  width: 80vw;
+  margin-top: 20px;
+  font-size: 32px;
 }
 
 .icons i {
+  margin: 0 10px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
+.icons i:hover {
+  transform: scale(1.2);
+  color: #f0d000;
+}
+
+/* PROGRESS BAR */
+#progressBar {
+  width: 80vw;
+  accent-color: #f0d000;
+}
+
+/* SONG ITEM */
 .songItem {
   display: flex;
-  background-color: rgb(230, 195, 20);
-  width: 150%;
-  margin: 24px;
-  color: black;
-  justify-content: space-between;
   align-items: center;
-  border-radius: 24px;
+  justify-content: space-between;
+
+  width: 150%;
+  padding: 12px 20px;
+  margin: 20px 0;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition: 0.3s ease;
 }
+
+.songItem:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 215, 0, 0.25);
+}
+
 .songItem img {
-  height: 50px;
-  margin-left: 0.5px;
-  border-radius: 24px;
+  height: 55px;
+  border-radius: 15px;
 }
 
 .timestamp {
-  margin: 0 23px;
+  margin: 0 20px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.timestamp:hover {
+  color: #f0d000;
 }
